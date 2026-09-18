@@ -1,0 +1,151 @@
+.usecases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.uc {
+  position: relative;
+  height: 30.77rem;
+  overflow: hidden;
+}
+
+/* each photo keeps the framing it has in the reference.
+   max-width must be cleared or the global img rule clamps the
+   framed crops back to the panel width and leaves a gap. */
+.uc__img {
+  position: absolute;
+  max-width: none;
+  object-fit: cover;
+}
+
+.uc__img.is-customers {
+  top: -0.8%;
+  left: -1.1%;
+  width: 104.6%;
+  height: 104.8%;
+}
+
+.uc__img.is-crew {
+  top: 0;
+  left: -27%;
+  width: 127.1%;
+  height: 127.4%;
+}
+
+.uc__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    96deg,
+    rgba(3, 12, 26, 0.9) 0%,
+    rgba(3, 12, 26, 0.78) 30%,
+    rgba(3, 12, 26, 0.44) 50%,
+    rgba(3, 12, 26, 0.1) 68%,
+    rgba(3, 12, 26, 0) 82%
+  );
+}
+
+.uc__content {
+  position: relative;
+  height: 100%;
+  padding: 3.55rem 2rem 0 5.5rem;
+  color: var(--white);
+}
+
+.uc__kicker {
+  font-size: 1.242rem;
+  letter-spacing: 0.191em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.uc__title {
+  margin-top: 0.85rem;
+  font-size: 2.481rem;
+  font-weight: 800;
+  line-height: 1.015;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.uc__list {
+  margin-top: 2.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.uc__list li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.435rem;
+  line-height: 1.36;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.uc__check {
+  flex: none;
+  width: 1.85rem;
+  height: 1.85rem;
+  margin-right: 1.05rem;
+  margin-top: 0.05rem;
+  color: var(--white);
+}
+
+@media (max-width: 1024px) {
+  .usecases {
+    grid-template-columns: 1fr;
+  }
+
+  .uc {
+    height: 24rem;
+  }
+
+  /* on narrow screens both photos fall back to a plain cover */
+  .uc__img.is-customers,
+  .uc__img.is-crew {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: 62% center;
+  }
+
+  .uc__scrim {
+    background: linear-gradient(
+      100deg,
+      rgba(3, 12, 26, 0.92) 0%,
+      rgba(3, 12, 26, 0.8) 38%,
+      rgba(3, 12, 26, 0.45) 62%,
+      rgba(3, 12, 26, 0.12) 85%
+    );
+  }
+
+  .uc__content {
+    padding: 2rem 1.25rem 0;
+  }
+
+  .uc__kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+  }
+
+  .uc__title {
+    margin-top: 0.55rem;
+    font-size: 1.65rem;
+  }
+
+  .uc__list {
+    margin-top: 1.2rem;
+    gap: 0.85rem;
+  }
+
+  .uc__list li {
+    font-size: 0.92rem;
+  }
+
+  .uc__check {
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-right: 0.7rem;
+  }
+}

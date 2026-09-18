@@ -1,0 +1,147 @@
+.footer {
+  background: var(--footer-bg);
+  color: var(--white);
+  padding: 2.38rem 0 2.1rem;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer__logo {
+  width: 19.13rem;
+  height: auto;
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1.31rem;
+  margin-top: 1.54rem;
+}
+
+.footer__socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.08rem;
+  opacity: 0.92;
+  transition: opacity 0.15s ease;
+}
+
+.footer__socials a:hover {
+  opacity: 1;
+}
+
+.footer__socials img {
+  height: 1.86rem;
+  width: auto;
+}
+
+.footer__socials .is-instagram img,
+.footer__socials .is-youtube img {
+  height: 2.08rem;
+}
+
+.footer__socials .is-facebook img {
+  height: 2.02rem;
+}
+
+.footer__socials svg {
+  height: 2rem;
+  width: auto;
+  color: var(--white);
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.55rem;
+  font-size: 1.16rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.footer__links a {
+  transition: color 0.15s ease;
+}
+
+.footer__links a:hover {
+  color: var(--blue-sky);
+}
+
+.footer__cta {
+  width: 15.27rem;
+  height: 3.86rem;
+  font-size: 1.19rem;
+  border-radius: 0.2rem;
+}
+
+.footer__rule {
+  height: 1px;
+  margin: 2.08rem 0 2.14rem;
+  background: var(--footer-rule);
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.107rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 1.9rem 0 1.5rem;
+  }
+
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .footer__logo {
+    width: 11rem;
+  }
+
+  .footer__socials {
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 0.9rem;
+  }
+
+  .footer__socials img,
+  .footer__socials svg {
+    height: 1.3rem;
+  }
+
+  .footer__links {
+    flex-wrap: wrap;
+    gap: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .footer__cta {
+    width: 12rem;
+    height: 2.9rem;
+    font-size: 0.92rem;
+  }
+
+  .footer__rule {
+    margin: 1.4rem 0 1.1rem;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+}
