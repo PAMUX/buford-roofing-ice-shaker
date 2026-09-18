@@ -29,6 +29,41 @@ size, and every hero dimension is `calc(N * var(--u))`, so the logo, headline,
 buttons and email scale together instead of overflowing. Below 1024px the hero
 stacks and `--u` reverts to `1rem`.
 
+## Social share preview and icons
+
+`public/` is copied to the site root untouched, so these keep stable filenames
+that link scrapers can cache:
+
+| file | what it is |
+| --- | --- |
+| `og-image.jpg` | 1200 x 630 share card |
+| `favicon.ico` | 16/32/48 tab icon |
+| `apple-touch-icon.png` | 180 x 180 iOS home screen |
+| `icon-192.png`, `icon-512.png` | manifest icons |
+| `site.webmanifest` | name, icons, theme colour |
+
+**The image URL comes from `VITE_SITE_URL` in `.env`.** It ships empty, which
+builds `content="og-image.jpg"` — a path relative to the page. That resolves
+correctly on GitHub Pages and on any domain, so nothing has to be decided up
+front and nothing can point at the wrong file.
+
+Once the final address is known, set it (with a trailing slash) for the widest
+scraper support:
+
+```
+VITE_SITE_URL=https://bufordroofing.com/ice-shaker/
+```
+
+and the tags build as absolute URLs. `.env` is committed on purpose — it holds
+no secrets and the build reads it.
+
+After deploying, re-scrape so the platforms drop any cached copy:
+Facebook <https://developers.facebook.com/tools/debug/>,
+LinkedIn <https://www.linkedin.com/post-inspector/>.
+
+To change the card, drop any 1200 x 630 JPEG over `public/og-image.jpg`. Keep it
+under ~300KB so WhatsApp renders it rather than skipping it.
+
 ## Replacing the hero photograph
 
 `src/assets/images/hero-bottles.jpg`. The current file is **21:9**
